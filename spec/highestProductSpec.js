@@ -55,8 +55,8 @@ describe("Finding highest products", function() {
     expect(actual).toEqual(0);
   });
 
-  xit("calculates highest product from a list of 10 unsorted integers", function() {
-    var list_of_ints = [-2, -10, -7, -5, 3, 4, 2, 2, 1, 3];
+  it("calculates highest product from a list of 8 unsorted integers", function() {
+    var list_of_ints = [-2, -10, -7, -5, 3, 4, 2, 1];
 
     var actual = HighestProduct.calculate(list_of_ints);
 

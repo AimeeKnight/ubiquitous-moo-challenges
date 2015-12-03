@@ -14,10 +14,6 @@ HighestProduct.calculate = function(listOfInts) {
       return product;
   }
 
-  var haveThreePositiveNumbers = function(numbers) {
-    return numbers.filter(function(n) { return n >= 0}).length >= 3;
-  }
-
   var isNegative = function(n) {
     return n < 0;
   }
@@ -26,25 +22,52 @@ HighestProduct.calculate = function(listOfInts) {
     return numbers.filter(isNegative).length >= 2;
   }
 
-  var smallestNegative = function(numbers) {
-    var sortedNegatives = numbers.filter(isNegative);
-    return sortedNegatives[sortedNegatives.length - 1];
+  var largestThreeNumbers = function(numbers) {
+    return numbers.slice(-3);
   }
 
-  var numbersToMultiply = [];
-  if (haveThreePositiveNumbers(listOfInts)) {
-    numbersToMultiply = listOfInts.slice(-3);
-  } else {
-    if (haveTwoNegativeNumbers(listOfInts)) {
-      numbersToMultiply.push(listOfInts[0]);
-      numbersToMultiply.push(listOfInts[1]);
-      numbersToMultiply.push(listOfInts[listOfInts.length - 1])
+  if (haveTwoNegativeNumbers(listOfInts)) {
+    var length = listOfInts.length;
+    var productOfLargestNegatives = listOfInts[0] * listOfInts[1];
+    var largestInteger = listOfInts[length - 1];
+    var productofLargestPositives = listOfInts[length - 2] *largestInteger ;
+
+    if (productOfLargestNegatives > productofLargestPositives) {
+      return productOfLargestNegatives * largestInteger;
     } else {
-      numbersToMultiply.push(listOfInts[listOfInts.length - 1]);
-      numbersToMultiply.push(listOfInts[listOfInts.length - 2]);
-      numbersToMultiply.push(smallestNegative(listOfInts))
+      return multiply(largestThreeNumbers(listOfInts));
     }
+  } else {
+    return multiply(largestThreeNumbers(listOfInts));
   }
-
-  return multiply(numbersToMultiply);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
