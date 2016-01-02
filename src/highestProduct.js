@@ -4,6 +4,7 @@ HighestProduct.calculate = function(listOfInts) {
   var ascending = function(a, b) {
     return a - b ;
   };
+
   listOfInts.sort(ascending);
 
   var multiply = function(numbers) {
@@ -27,16 +28,17 @@ HighestProduct.calculate = function(listOfInts) {
   }
 
   if (haveTwoNegativeNumbers(listOfInts)) {
-    var length = listOfInts.length;
-    var productOfLargestNegatives = listOfInts[0] * listOfInts[1];
-    var largestInteger = listOfInts[length - 1];
-    var productofLargestPositives = listOfInts[length - 2] *largestInteger ;
+    var length = listOfInts.length
+      , productOfLargestNegatives = listOfInts[0] * listOfInts[1]
+      , argestInteger = listOfInts[length - 1]
+      , productofLargestPositives = listOfInts[length - 2] *largestInteger ;
 
     if (productOfLargestNegatives > productofLargestPositives) {
       return productOfLargestNegatives * largestInteger;
     } else {
       return multiply(largestThreeNumbers(listOfInts));
     }
+
   } else {
     return multiply(largestThreeNumbers(listOfInts));
   }
