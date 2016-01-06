@@ -19,5 +19,4 @@ describe("StringUtils", function() {
         var result = StringUtils.reverse(word);
         expect(result).toEqual('eemia');
     });
-
 });

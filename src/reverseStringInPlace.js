@@ -20,8 +20,8 @@ StringUtils.sort = function (nums) {
 
 StringUtils.reverse = function (word) {
     const letters = word.split('');
-    var start = 0;
-    var end = letters.length - 1;
+    var start = 0
+    , end = letters.length - 1;
 
     while (start < end) {
         StringUtils.swap(letters, start, end);
@@ -31,6 +31,7 @@ StringUtils.reverse = function (word) {
     return letters.join('');
 };
 
+// swap works best for most in place algorithms
 StringUtils.swap = function (collection, index1, index2) {
     var tmp = collection[index1];
     collection[index1] = collection[index2];

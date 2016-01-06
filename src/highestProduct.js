@@ -30,7 +30,7 @@ HighestProduct.calculate = function(listOfInts) {
   if (haveTwoNegativeNumbers(listOfInts)) {
     var length = listOfInts.length
       , productOfLargestNegatives = listOfInts[0] * listOfInts[1]
-      , argestInteger = listOfInts[length - 1]
+      , largestInteger = listOfInts[length - 1]
       , productofLargestPositives = listOfInts[length - 2] *largestInteger ;
 
     if (productOfLargestNegatives > productofLargestPositives) {
